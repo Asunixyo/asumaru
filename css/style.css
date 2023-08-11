@@ -1,6 +1,398 @@
-@use 'common/reset';
-@use 'style/style_common';
-@use 'style/style_header';
-@use 'style/style_footer';
-@use 'style/style_index';
-@use 'common/utilities';
+@charset "UTF-8";
+/***
+    The new CSS reset - version 1.8.4 (last updated 14.2.2023)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input, textarea {
+  -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  -moz-appearance: revert;
+       appearance: revert;
+}
+
+/* preformatted text - use only for this feature */
+:where(pre) {
+  all: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::-moz-placeholder {
+  color: unset;
+}
+::placeholder {
+  color: unset;
+}
+
+/* remove default dot (•) sign */
+::marker {
+  content: initial;
+}
+
+/* fix the feature of 'hidden' attribute.
+ display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+ - fix for the content editable attribute will work properly.
+ - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable=false])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable=true]) {
+  -webkit-user-drag: element;
+}
+
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+  all: revert;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.wrapper {
+  max-width: 904px;
+  width: 100%;
+  margin-top: 80px;
+}
+
+h2 {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 56px;
+  font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  letter-spacing: 0;
+  color: #1B224C;
+}
+@media (min-width: 601px) and (max-width: 904px) {
+  h2 {
+    font-size: 32px;
+    line-height: 48px;
+  }
+}
+@media (max-width: 600px) {
+  h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+p, li, a {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  letter-spacing: 0;
+  color: #1B224C;
+}
+@media (max-width: 600px) {
+  p, li, a {
+    line-height: 16px;
+  }
+}
+
+header {
+  position: fixed;
+  padding: 8px;
+  height: 80px;
+  width: 100%;
+  z-index: 900;
+  max-width: 1120px;
+  background-color: #ffffff;
+}
+header nav {
+  display: flex;
+  justify-content: flex-end;
+}
+header nav ul {
+  display: flex;
+}
+header nav ul li {
+  margin: 0 8px;
+}
+header nav ul li:first-child {
+  margin-left: 0;
+}
+header nav ul li:last-child {
+  margin-right: 0;
+}
+header nav ul li a {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1B224C;
+}
+header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+  height: 80px;
+  z-index: 800;
+}
+
+.social-icons {
+  display: grid;
+  align-items: flex-end;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+.social-icons a {
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  color: #333;
+}
+
+main {
+  width: 100%;
+}
+main .slide-show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  width: 100%;
+}
+main .content-wrapper {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  height: 100%;
+  width: 100%;
+  height: 50%;
+  width: 100%;
+}
+main .content-wrapper .content {
+  padding: 16px;
+}
+main .content-wrapper .content > section {
+  margin: 16px 0;
+}
+main .content-wrapper .content > section:first-child {
+  margin-top: 0;
+}
+main .content-wrapper .content > section:last-child {
+  margin-bottom: 0;
+}
+main .content-wrapper .content > section h2 {
+  margin-bottom: 8px;
+}
+main .content-wrapper .content-about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .content-wrapper .content-about-container img {
+  border-radius: 50%;
+  width: 30%;
+  height: 30%;
+  margin-right: 16px;
+  background-color: aquamarine;
+}
+main .content-wrapper .content-work-card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+main .content-wrapper .content-work-card-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px;
+  margin: 8px 0;
+  min-width: 64px;
+  border-radius: 8px;
+  background-color: lightpink;
+}
+main .content-wrapper .content-work-card-box i {
+  font-size: 80px;
+}
+main .content-wrapper .content-work-card-box p {
+  text-align: center;
+  overflow-wrap: break-word;
+  margin-top: 8px;
+}
+main .content-wrapper .content-hobby-list {
+  display: flex;
+  justify-content: center;
+  margin: 8px 0;
+}
+main .content-wrapper .content-hobby-list:first-child {
+  margin-top: 0;
+}
+main .content-wrapper .content-hobby-list:last-child {
+  margin-bottom: 0;
+}
+main .content-wrapper .content-hobby-list:nth-child(odd) img {
+  margin-right: 8px;
+}
+main .content-wrapper .content-hobby-list:nth-child(even) {
+  flex-direction: row-reverse;
+}
+main .content-wrapper .content-hobby-list:nth-child(even) img {
+  margin-left: 8px;
+}
+main .content-wrapper .content-hobby-list img {
+  width: 40%;
+  border-radius: 8px;
+}
+main .content-wrapper .content-hobby-list-text {
+  padding: 8px 0;
+}
+main .content-wrapper .content-hobby-list-text p {
+  white-space: normal;
+}
+main .content-wrapper aside {
+  height: 100%;
+  padding: 16px;
+}
+main .content-wrapper aside .sidebar-item {
+  margin: 40px 0;
+}
+main .content-wrapper aside .sidebar-item:first-child {
+  margin-top: 0;
+}
+main .content-wrapper aside .sidebar-item:last-child {
+  margin-bottom: 0;
+}
+main .content-wrapper aside .sidebar-item p {
+  font-size: larger;
+  text-align: center;
+  margin-bottom: 8px;
+}
+main .content-wrapper aside .sidebar-item ul li {
+  position: relative;
+  padding-left: 20px;
+}
+main .content-wrapper aside .sidebar-item ul li::before {
+  content: "ᥤ";
+  position: absolute;
+  left: 0;
+}
+main .content-wrapper aside .sidebar-item ul li a {
+  color: palevioletred;
+  -webkit-text-decoration: underline palevioletred;
+          text-decoration: underline palevioletred;
+}
+main .content-wrapper aside .sidebar-item ul li a:hover {
+  color: #00ACED;
+  -webkit-text-decoration: underline #00ACED;
+          text-decoration: underline #00ACED;
+}
+
+@media (max-width: 600px) {
+  .none-phone {
+    display: none !important;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 904px) {
+  .none-tablet-portrait {
+    display: none !important;
+  }
+}
+
+@media (min-width: 905px) and (max-width: 1200px) {
+  .none-tablet-landscape {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .none-desktop {
+    display: none !important;
+  }
+}
+
+@media (max-width: 904px) {
+  .none-tablet-portrait-phone {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .none-tablet-landscape-phone {
+    display: none !important;
+  }
+}
+
+@media (min-width: 905px) {
+  .none-tablet-portrait-desktop {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1201px) {
+  .none-tablet-landscape-desktop {
+    display: none !important;
+  }
+}/*# sourceMappingURL=style.css.map */

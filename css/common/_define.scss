@@ -13,10 +13,13 @@ $global-colors: (
   'black': #00000029,
   'share': #305097,
   'twitter': #00ACED,
+  'icons': #333,
+  'a-tag': palevioletred,
+  "a-tag-hover": #00ACED,
 );
 
 $max-width: (
-  'header': $base-unit * 160,
+  'header': $base-unit * 140,
   'content': $base-unit * 113,
   'nav': $base-unit * 50
 );

@@ -9,40 +9,43 @@ body {
   display: flex;
   justify-content: center;
   margin: auto;
+  // flex-direction: column;
+  // width: 100%;
 }
 
 .wrapper {
+  max-width: map-get($max-width, "content");
   width: 100%;
   margin-top: mu(10);
 }
 
 main {
-  padding: mu(14) 0 mu(11);
+  // padding: mu(14) 0 mu(11);
 }
 
 section {
-  display:flex;
-  justify-content: center;
-  overflow: hidden;
-  padding: mu(8) 0 mu(7);
-  width: 100%;
-  @include respond(tablet-portrait) {
-    padding: mu(7) mu(4) mu(6);
-  }
-  @include respond(phone) {
-    padding: mu(6) mu(3) mu(5);
-  }
+  // display:flex;
+  // justify-content: center;
+  // overflow: hidden;
+  // padding: mu(8) 0 mu(7);
+  // width: 100%;
+  // @include respond(tablet-portrait) {
+  //   padding: mu(7) mu(4) mu(6);
+  // }
+  // @include respond(phone) {
+  //   padding: mu(6) mu(3) mu(5);
+  // }
 
-  > div {
-    max-width: map-get($max-width, 'content');
-    width: 100%;
-    > h2 {
-      margin-bottom: mu(7);
-    }
-  }
-  h2 {
-    text-align: center;
-  }
+  // > div {
+  //   max-width: map-get($max-width, 'content');
+  //   width: 100%;
+  //   > h2 {
+  //     margin-bottom: mu(7);
+  //   }
+  // }
+  // h2 {
+  //   text-align: center;
+  // }
 }
 
 h2 {
@@ -54,154 +57,10 @@ p , li, a {
 }
 
 a:hover {
-  opacity: map-get($opacity, "medium");
-  cursor: pointer;
+  // opacity: map-get($opacity, "medium");
+  // cursor: pointer;
 }
 
 li {
-  @include reset-horizon-margins;
-}
-
-.common-breadcrumb-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: mu(2) 0;
-  background-color: map-get($global-colors, "fill");
-  * {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .common-breadcrumb {
-    display: flex;
-    justify-content: flex-start;
-    width: map-get($max-width, "content");
-    @include respond(tablet-portrait-phone) {
-      padding: 0 mu(3);
-    }      
-    li {
-      margin: mu(1);
-      text-decoration: underline;
-      * {
-        @include p-small-style(map-get($global-colors,"main"));
-      }
-      &:last-child {
-        text-decoration: none;
-      }
-    }
-  }
-}
-
-.common-request-wrapper {
-  margin-top: mu(15);
-  background: url("../../images/cta_2x.png") no-repeat center center;
-  background-size: cover;
-
-  .common-request {
-    &-title {
-      margin-bottom: mu(2);
-      color: map-get($global-colors, "font-sub");
-    }
-  
-    &-content {
-      &-button {
-        display: flex;
-        justify-content: center;
-        margin-top: 16px;
-        margin-bottom: 22px;
-  
-        &-content {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          @include rounded-button-style(map-get($global-colors, "sub"), mu(35), mu(6));
-          > p {
-            color: map-get($global-colors, "font-sub");
-          }
-        }
-      }
-    
-      &-question {
-        display: flex;
-        justify-content: center;
-        p {
-          text-decoration: underline;
-          color: map-get($global-colors, "font-sub");
-        }
-      }
-    }
-  }
-}
-
-.common-call-wrapper {
-  display: grid;
-  padding: 0;
-
-  .common-call {
-    &-content {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      padding: mu(2) 0 mu(3);
-      @include respond(tablet-landscape-phone) {
-        display: block;
-      }
-      > * {
-        display: flex;
-        align-items: end;
-        @include respond(tablet-landscape-phone) {
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-        }
-      }
-
-      &-text {
-        margin-right: mu(2);
-        > p {
-          font-weight: bold;
-        }
-      }
-      
-      &-number {
-        > p {
-          @include p-emphasize-style(map-get($global-colors, "font-main"));
-        }
-      }
-      
-      &-when {
-        margin-left: mu(2);
-        @include respond(tablet-landscape-phone) {
-          margin: 0;
-        }
-      }
-    }
-  }
-}
-
-.common-pagination-wrapper {
-  .common-pagination {
-    display: flex;
-    justify-content: center;
-    
-    &-box {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0 mu(2);
-      width: mu(6);
-      height: mu(6);
-      border: 1px solid map-get($global-colors, 'main');
-      &:first-child {
-        background-color: map-get($global-colors, "main");
-        p {
-          color: map-get($global-colors, "font-sub");
-        }
-      }
-      &:nth-child(4) {
-        border: none;
-      }
-    }
-  }
+  // @include reset-horizon-margins;
 }
