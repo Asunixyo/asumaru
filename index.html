@@ -7,7 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="images/about.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <!-- Slick CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
   <link rel="stylesheet" href="./css/style.css">
+
+  <link type="text/css" rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/src/css/lightgallery.css" />
   <title>asumaru ポートフォリオ</title>
 </head>
 
@@ -24,9 +30,11 @@
   <div class="wrapper">
 
     <main>
-      <div class="slide-show">
-        <img src="images/main.jpg" alt="メイン画像">
-      </div>
+      <ul id="slide-show">
+        <li><img src="images/main.jpg" alt="メイン画像"></li>
+        <li><img src="images/about.png" alt="ラーメン"></li>
+        <li><img src="images/main.jpg" alt="メイン画像"></li>
+      </ul>
       <div class="content-wrapper">
         <div class="content">
           <section class="content-about">
@@ -71,33 +79,41 @@
           </section>
           <section class="content-hobby">
             <h2>hobby</h2>
+            <div id="lightgallery" class="gallery">
+              <a href="https://picsum.photos/id/237/200/300"><img src="https://picsum.photos/id/237/100/100" /></a>
+              <a href="https://picsum.photos/id/1018/200/300"><img src="https://picsum.photos/id/1018/100/100" /></a>
+              <a href="https://picsum.photos/id/239/200/300"><img src="https://picsum.photos/id/239/100/100" /></a>
+              <a href="https://picsum.photos/id/1001/200/300"><img src="https://picsum.photos/id/1001/100/100"></a>
+              <a href="https://picsum.photos/id/1002/200/300"><img src="https://picsum.photos/id/1002/100/100"></a>
+              <a href="https://picsum.photos/id/1003/200/300"><img src="https://picsum.photos/id/1003/100/100"></a>
+            </div>
             <div class="content-hobby-list-wrapper">
               <div class="content-hobby-list">
                 <img src="images/main.jpg" alt="高千穂牧場">
                 <div class="content-hobby-list-text">
                   <!-- <p>aaaaaaaaaaaaaああ　ああああああああああああaaaaaaa　aaaaaaああああああああああああああ</p> -->
-                  <p>ソフトクリームまた食べたい　ソフトクリームまた食べたい</p>
+                  <p>ソフトクリームまた食べたいソフトクリームまた食べたい</p>
                 </div>
               </div>
               <div class="content-hobby-list">
                 <img src="images/main.jpg" alt="高千穂牧場">
                 <div class="content-hobby-list-text">
                   <!-- <p>aaaaaaaaaaaaaああ　ああああああああああああaaaaaaa　aaaaaaああああああああああああああ</p> -->
-                  <p>ソフトクリームまた食べたい　ソフトクリームまた食べたい</p>
+                  <p>ソフトクリームまた食べたいソフトクリームまた食べたい</p>
                 </div>
               </div>
               <div class="content-hobby-list">
                 <img src="images/main.jpg" alt="高千穂牧場">
                 <div class="content-hobby-list-text">
                   <!-- <p>aaaaaaaaaaaaaああ　ああああああああああああaaaaaaa　aaaaaaああああああああああああああ</p> -->
-                  <p>ソフトクリームまた食べたい　ソフトクリームまた食べたい</p>
+                  <p>ソフトクリームまた食べたいソフトクリームまた食べたい</p>
                 </div>
               </div>
               <div class="content-hobby-list">
                 <img src="images/main.jpg" alt="高千穂牧場">
                 <div class="content-hobby-list-text">
                   <!-- <p>aaaaaaaaaaaaaああ　ああああああああああああaaaaaaa　aaaaaaああああああああああああああ</p> -->
-                  <p>ソフトクリームまた食べたい　ソフトクリームまた食べたい</p>
+                  <p>ソフトクリームまた食べたいソフトクリームまた食べたい</p>
                 </div>
               </div>
             </div>
@@ -152,7 +168,14 @@
       </div>
     </footer>
   </div>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Slick JavaScript -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <!-- ギャラリー -->
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js"></script>
 
+  <script src="main.js"></script>
 </body>
 
 </html>

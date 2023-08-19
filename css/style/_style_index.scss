@@ -5,154 +5,237 @@ main {
   width: 100%;
 
   // height: mu(50);
+  /* スライドショーのスタイル */
   .slide-show {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50%;
-    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+
+    li {
+      float: left;
+      width: 100%;
+      position: relative;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .active {
+      opacity: 1;
+    }
+  }
+}
+
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  height: 100%;
+  width: 100%;
+  height: 50%;
+  width: 100%;
+
+  @include respond(phone) {
+    display: block;
   }
 
-  .content-wrapper {
-    display: grid;
-    grid-template-columns: 70% 30%;
-    // gap: mu(5);
-    height: 100%;
-    width: 100%;
-    height: 50%;
-    width: 100%;
+  .content {
+    padding: mu(2);
 
-    .content {
-      padding: mu(2);
+    >section {
+      margin: mu(2) 0;
+      @include reset-vertical-margins;
 
-      >section {
+      h2 {
+        margin-bottom: mu(5);
+      }
+    }
+
+    &-about {
+      &-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          border-radius: 50%;
+          width: 30%;
+          height: 30%;
+          margin-right: mu(2);
+          background-color: aquamarine;
+        }
+      }
+    }
+
+    &-work {
+      &-card {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: mu(2);
+
+        @include respond(phone) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include respond(desktop) {
+          grid-template-columns: repeat(4, 1fr);
+        }
+
+        &-box {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          padding: mu(2);
+          margin: mu(1) 0;
+          min-width: mu(8);
+          border-radius: mu(1);
+          background-color: lightpink;
+
+          i {
+            font-size: mu(10);
+          }
+
+          p {
+            text-align: center;
+            overflow-wrap: break-word;
+            margin-top: mu(1);
+          }
+        }
+      }
+    }
+
+    &-hobby {
+      .gallery {
+        text-align: center;
+      }
+
+      .content-hobby-list-wrapper {
+        margin-top: mu(3);
+
+        @include respond(phone) {
+          display: flex;
+          flex-flow: column;
+          align-items: center;
+        }
+      }
+
+      &-list {
+        display: flex;
         margin: mu(2) 0;
         @include reset-vertical-margins;
 
-        h2 {
-          margin-bottom: mu(1);
+        @include respond(phone) {
+          display: block;
+          text-align: center;
+          width: 80%;
         }
-      }
 
-      &-about {
-        &-container {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
+        // 奇数
+        &:nth-child(odd) {
           img {
-            border-radius: 50%;
-            width: 30%;
-            height: 30%;
-            margin-right: mu(2);
-            background-color: aquamarine;
-          }
-        }
-      }
+            margin-right: mu(1);
 
-      &-work {
-        &-card {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: mu(2);
-
-          &-box {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            padding: mu(2);
-            margin: mu(1) 0;
-            min-width: mu(8);
-            border-radius: mu(1);
-            background-color: lightpink;
-
-            i {
-              font-size: mu(10);
-            }
-
-            p {
-              text-align: center;
-              overflow-wrap: break-word;
-              margin-top: mu(1);
+            @include respond(phone) {
+              margin: 0;
             }
           }
-        }
-      }
-
-      &-hobby {
-        &-list {
-          display: flex;
-          justify-content: center;
-          margin: mu(1) 0;
-          @include reset-vertical-margins;
-
-          &:nth-child(odd) {
-            img {
-              margin-right: mu(1);
-            }
-          }
-
-          &:nth-child(even) {
-            flex-direction: row-reverse;
-
-            img {
-              margin-left: mu(1);
-            }
-          }
-
 
           img {
             width: 40%;
             border-radius: mu(1);
+
+            @include respond(phone) {
+              width: 80%;
+            }
+          }
+        }
+
+        // 偶数
+        &:nth-child(even) {
+          flex-direction: row-reverse;
+
+          @include respond(phone) {
+            flex-direction: row;
           }
 
-          &-text {
-            padding: mu(1) 0;
+          img {
+            margin-left: mu(1);
 
-            p {
-              white-space: normal;
+            @include respond(phone) {
+              margin: 0;
             }
+          }
+
+          img {
+            width: 40%;
+            border-radius: mu(1);
+
+            @include respond(phone) {
+              width: 80%;
+            }
+          }
+        }
+
+        &-text {
+          padding: mu(1) 0;
+
+          @include respond(phone) {
+            width: 80%;
+            margin: 0 auto;
+          }
+
+          p {
+            white-space: normal;
+            text-align: left;
           }
         }
       }
+    }
+  }
 
+  aside {
+    height: 100%;
+    padding: mu(2);
+
+    @include respond(phone) {
+      display: none;
     }
 
-    aside {
-      height: 100%;
-      padding: mu(2);
+    .sidebar-item {
+      @include reset-vertical-margins;
+      margin: mu(5) 0;
+      // background-color: antiquewhite;
 
-      .sidebar-item {
-        @include reset-vertical-margins;
-        margin: mu(5) 0;
-        // background-color: antiquewhite;
+      p {
+        font-size: larger;
+        text-align: center;
+        margin-bottom: mu(1);
+      }
 
-        p {
-          font-size: larger;
-          text-align: center;
-          margin-bottom: mu(1);
-        }
+      ul {
+        li {
+          position: relative;
+          padding-left: 20px;
 
-        ul {
-          li {
-            position: relative;
-            padding-left: 20px;
+          &::before {
+            content: '\1964';
+            position: absolute;
+            left: 0;
+          }
 
-            &::before {
-              content: '\1964';
-              position: absolute;
-              left: 0;
-            }
+          a {
+            color: map-get($global-colors, "a-tag");
+            text-decoration: underline map-get($global-colors, "a-tag");
 
-            a {
-              color: map-get($global-colors, "a-tag");
-              text-decoration: underline map-get($global-colors, "a-tag");
-
-              &:hover {
-                color: map-get($global-colors, "a-tag-hover");
-                text-decoration: underline map-get($global-colors, "a-tag-hover");
-              }
+            &:hover {
+              color: map-get($global-colors, "a-tag-hover");
+              text-decoration: underline map-get($global-colors, "a-tag-hover");
             }
           }
         }
