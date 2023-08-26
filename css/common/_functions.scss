@@ -67,7 +67,7 @@
     line-height: mu(6);
   }
   @include respond(phone) {
-    font-size: mu(4);
+    font-size: mu(3);
     line-height: mu(5);
   }
 }

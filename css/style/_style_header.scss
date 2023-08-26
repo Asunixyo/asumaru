@@ -4,7 +4,7 @@
 header {
   position: fixed;
   padding: mu(1);
-  height: mu(10);
+  height: mu(8);
   width: 100%;
   z-index: map-get($z-index, "header");
   max-width: map-get($max-width, "header");
@@ -29,6 +29,10 @@ header {
 
           &:hover {
             text-decoration: underline;
+          }
+
+          @include respond(phone) {
+            font-size: mu(2);
           }
         }
       }

@@ -17,6 +17,7 @@ body {
   max-width: map-get($max-width, "content");
   width: 100%;
   margin-top: mu(10);
+  overflow: hidden;
 }
 
 main {

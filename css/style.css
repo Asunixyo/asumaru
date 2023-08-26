@@ -116,6 +116,7 @@ body {
   max-width: 904px;
   width: 100%;
   margin-top: 80px;
+  overflow: hidden;
 }
 
 h2 {
@@ -136,7 +137,7 @@ h2 {
 }
 @media (max-width: 600px) {
   h2 {
-    font-size: 32px;
+    font-size: 24px;
     line-height: 40px;
   }
 }
@@ -160,7 +161,7 @@ p, li, a {
 header {
   position: fixed;
   padding: 8px;
-  height: 80px;
+  height: 64px;
   width: 100%;
   z-index: 900;
   max-width: 1120px;
@@ -189,6 +190,11 @@ header nav ul li a {
 }
 header nav ul li a:hover {
   text-decoration: underline;
+}
+@media (max-width: 600px) {
+  header nav ul li a {
+    font-size: 16px;
+  }
 }
 
 footer {
@@ -278,42 +284,50 @@ main .slide-show .active {
   margin-right: 16px;
   background-color: aquamarine;
 }
-.content-wrapper .content-work-card {
+.content-wrapper .content-skill-card {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 @media (max-width: 600px) {
-  .content-wrapper .content-work-card {
+  .content-wrapper .content-skill-card {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (min-width: 1200px) {
-  .content-wrapper .content-work-card {
+  .content-wrapper .content-skill-card {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-.content-wrapper .content-work-card-box {
+.content-wrapper .content-skill-card-box {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   padding: 16px;
   margin: 8px 0;
-  min-width: 64px;
   border-radius: 8px;
   background-color: lightpink;
 }
-.content-wrapper .content-work-card-box i {
+.content-wrapper .content-skill-card-box i {
   font-size: 80px;
 }
-.content-wrapper .content-work-card-box p {
+.content-wrapper .content-skill-card-box p {
+  word-break: break-all;
   text-align: center;
-  overflow-wrap: break-word;
   margin-top: 8px;
+}
+@media (max-width: 600px) {
+  .content-wrapper .content-skill-card-box p {
+    font-size: small;
+  }
 }
 .content-wrapper .content-hobby .gallery {
   text-align: center;
+}
+.content-wrapper .content-hobby .gallery img {
+  height: 160px;
+  width: 160px;
 }
 .content-wrapper .content-hobby .content-hobby-list-wrapper {
   margin-top: 24px;

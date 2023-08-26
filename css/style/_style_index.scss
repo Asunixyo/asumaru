@@ -72,7 +72,7 @@ main {
       }
     }
 
-    &-work {
+    &-skill {
       &-card {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -93,7 +93,6 @@ main {
           flex-direction: column;
           padding: mu(2);
           margin: mu(1) 0;
-          min-width: mu(8);
           border-radius: mu(1);
           background-color: lightpink;
 
@@ -102,9 +101,13 @@ main {
           }
 
           p {
+            word-break: break-all;
             text-align: center;
-            overflow-wrap: break-word;
             margin-top: mu(1);
+
+            @include respond(phone) {
+              font-size: small;
+            }
           }
         }
       }
@@ -113,6 +116,10 @@ main {
     &-hobby {
       .gallery {
         text-align: center;
+        img {
+          height: mu(20);
+          width: mu(20);
+        }
       }
 
       .content-hobby-list-wrapper {

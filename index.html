@@ -1,181 +1,239 @@
 <!DOCTYPE html>
 <html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="images/ramen_illustration.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <!-- Slick CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="images/about.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <!-- Slick CSS -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
-  <link rel="stylesheet" href="./css/style.css">
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/src/css/lightgallery.css"
+    />
+    <title>asumaru ポートフォリオ</title>
+  </head>
 
-  <link type="text/css" rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/src/css/lightgallery.css" />
-  <title>asumaru ポートフォリオ</title>
-</head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">SKILL</a></li>
+          <li><a href="#">HOBBY</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="wrapper">
+      <main>
+        <ul id="slide-show">
+          <li>
+            <img
+              src="images/minatomirai_cityscape_sea.jpg"
+              alt="みなとみらい"
+            />
+          </li>
+          <li><img src="images/takachiho_ranch.jpg" alt="高千穂牧場" /></li>
+          <li><img src="images/udo_shrine.jpg" alt="鵜戸神宮" /></li>
+          <li><img src="images/brisbane_cityscape.jpg" alt="ブリスベン" /></li>
+        </ul>
+        <div class="content-wrapper">
+          <div class="content">
+            <section class="content-about">
+              <h2>ABOUT</h2>
+              <div class="content-about-container">
+                <img
+                  src="images/australia_koala_hug.jpg"
+                  alt="コアラとの写真"
+                />
+                <ul>
+                  <li>こんにちは！私は1999年1月6日生まれの東京出身です。</li>
+                  <li>
+                    保育の短大を卒業した後、幼稚園で1年間教諭として働き、その後は保育士として3年間の経験を積みました。
+                  </li>
+                  <li>
+                    現在はWeb系のIT会社でフロントエンドエンジニアとして活動しています。
+                  </li>
+                </ul>
+              </div>
+            </section>
+            <section class="content-skill">
+              <h2>SKILL</h2>
+              <div class="content-skill-card">
+                <div class="content-skill-card-box">
+                  <i class="fab fa-html5"></i>
+                  <p>
+                    半年間の実務経験を通じて、パーツ単位から全体のレイアウトまでのデザインを実現する能力を磨き上げました。特に、レスポンシブデザインにも対応し、様々なデバイスでの閲覧を考慮したレイアウト作成が得意です。
+                  </p>
+                </div>
+                <div class="content-skill-card-box">
+                  <i class="fab fa-css3-alt"></i>
+                  <p>
+                    実務でのコーディング経験があり、デザインを忠実に再現することができます。これにより、ウェブページのビジュアル面での要求をしっかりと捉え、実現することができます。
+                  </p>
+                </div>
 
-<body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  <div class="wrapper">
+                <div class="content-skill-card-box">
+                  <i class="fab fa-sass"></i>
+                  <p>
+                    CSSの拡張言語であるSASSを用いることで、効率的なスタイルシートの管理と、より高度なデザインの実現が可能です。
+                  </p>
+                </div>
 
-    <main>
-      <ul id="slide-show">
-        <li><img src="images/main.jpg" alt="メイン画像"></li>
-        <li><img src="images/about.png" alt="ラーメン"></li>
-        <li><img src="images/main.jpg" alt="メイン画像"></li>
-      </ul>
-      <div class="content-wrapper">
-        <div class="content">
-          <section class="content-about">
-            <h2>about</h2>
-            <div class="content-about-container">
-              <img src="images/about.png" alt="顔写真">
+                <div class="content-skill-card-box">
+                  <i class="fab fa-js-square"></i>
+                  <p>
+                    人気のあるライブラリやプラグイン、例えば「slick」や「garalley」の導入経験を持っています。これにより、動的なウェブページの実装やユーザー体験の向上が期待できます。
+                  </p>
+                </div>
+
+                <div class="content-skill-card-box">
+                  <i class="fas fa-code"></i>
+                  <p>
+                    jQueryについては、現在学習中です。この技術を習得することで、フロントエンドの技術の幅をさらに広げることを目指しています。
+                  </p>
+                </div>
+
+                <div class="content-skill-card-box">
+                  <i class="fab fa-wordpress"></i>
+                  <p>
+                    WordPressに関しては、ショートコードの知見を持っています。また、その深い部分についても学習を進めており、今後はWordPressの高度なカスタマイズやテーマ作成にも挑戦していく予定です。
+                  </p>
+                </div>
+              </div>
+            </section>
+            <section class="content-hobby">
+              <h2>HOBBY</h2>
+              <div id="lightgallery" class="gallery">
+                <a href="images/jumbo_mochi_treat.jpg">
+                  <img src="images/jumbo_mochi_treat.jpg" />
+                </a>
+                <a href="images/sengan_en_garden.jpg">
+                  <img src="images/sengan_en_garden.jpg" />
+                </a>
+                <a href="images/chicken_nanban_dish.jpg">
+                  <img src="images/chicken_nanban_dish.jpg" />
+                </a>
+                <a href="images/australian_seascape.jpg">
+                  <img src="images/australian_seascape.jpg" />
+                </a>
+                <a href="">
+                  <img src="" />
+                </a>
+                <a href="">
+                  <img src="" />
+                </a>
+              </div>
+              <div class="content-hobby-list-wrapper">
+                <div class="content-hobby-list">
+                  <img
+                    src="images/miyakonojo_shimazu_heritage_museum.jpg"
+                    alt="都城島津伝承館"
+                  />
+                  <div class="content-hobby-list-text">
+                    <p>
+                      日本の都城にある島津伝承館は、歴史愛好者にはたまらない場所。島津家の歴史や文化が詰まったこの館は、過去の風景を今に伝える宝庫。展示物や詳しい解説を通じて、時代を超えて島津家の足跡をたどることができます。
+                    </p>
+                  </div>
+                </div>
+                <div class="content-hobby-list">
+                  <img src="images/ogawa_waterfall_nature.jpg" alt="雄川の滝" />
+                  <div class="content-hobby-list-text">
+                    <p>
+                      自然の力強さと美しさを同時に感じさせてくれる場所です。滝の勢いよく落ちる水の音や、滝壺から上がる水しぶきは、訪れる者の心を洗い清めてくれるかのよう。自然の中でのひとときは、都会の喧騒を忘れ、心のリフレッシュとなります。
+                    </p>
+                  </div>
+                </div>
+                <div class="content-hobby-list">
+                  <img src="images/brisbane_cityscape.jpg" alt="ブリスベン" />
+                  <div class="content-hobby-list-text">
+                    <p>
+                      オーストラリアの都市の魅力は、都会の活気と自然の共存にあります。ブリスベン川沿いのカフェでのんびりと過ごす時間は、日常の喧騒を忘れさせてくれる癒しのひととき。市内に点在するアートギャラリーや歴史的建造物を巡ると、都市の文化や歴史の深さを感じることができます。
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <aside>
+            <div class="sidebar-item">
+              <p>Index</p>
               <ul>
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
               </ul>
             </div>
-          </section>
-          <section class="content-work">
-            <h2>work</h2>
-            <div class="content-work-card">
-              <div class="content-work-card-box">
-                <i class="fab fa-facebook"></i>
-                <p>facebookfacebook facebookfa cebookfacebook facebook</p>
-              </div>
-              <div class="content-work-card-box">
-                <i class="fab fa-facebook"></i>
-                <p>facebookfacebook facebookfa cebookfacebook facebook</p>
-              </div>
-              <div class="content-work-card-box">
-                <i class="fab fa-facebook"></i>
-                <p>facebookfacebook facebookfa cebookfacebook facebook</p>
-              </div>
-              <div class="content-work-card-box">
-                <i class="fab fa-facebook"></i>
-                <p>facebookfacebook facebookfa cebookfacebook facebook</p>
-              </div>
-              <div class="content-work-card-box">
-                <i class="fab fa-facebook"></i>
-                <p>facebookfacebook facebookfa cebookfacebook facebook</p>
-              </div>
-              <div class="content-work-card-box">
-                <i class="fab fa-facebook"></i>
-                <p>facebookfacebook facebookfa cebookfacebook facebook</p>
-              </div>
+            <div class="sidebar-item">
+              <p>Category</p>
+              <ul>
+                <li><a href="#">旅行日記</a></li>
+                <li><a href="#">料理レシピ</a></li>
+                <li><a href="#">ファッション</a></li>
+                <li><a href="#">ライフハック</a></li>
+                <li><a href="#">ブックレビュー</a></li>
+                <li><a href="#">健康とフィットネス</a></li>
+                <li><a href="#">ペットの世話</a></li>
+                <li><a href="#">芸術とクラフト</a></li>
+                <li><a href="#">ビジネスとキャリア</a></li>
+                <li><a href="#">テクノロジー</a></li>
+              </ul>
             </div>
-          </section>
-          <section class="content-hobby">
-            <h2>hobby</h2>
-            <div id="lightgallery" class="gallery">
-              <a href="https://picsum.photos/id/237/200/300"><img src="https://picsum.photos/id/237/100/100" /></a>
-              <a href="https://picsum.photos/id/1018/200/300"><img src="https://picsum.photos/id/1018/100/100" /></a>
-              <a href="https://picsum.photos/id/239/200/300"><img src="https://picsum.photos/id/239/100/100" /></a>
-              <a href="https://picsum.photos/id/1001/200/300"><img src="https://picsum.photos/id/1001/100/100"></a>
-              <a href="https://picsum.photos/id/1002/200/300"><img src="https://picsum.photos/id/1002/100/100"></a>
-              <a href="https://picsum.photos/id/1003/200/300"><img src="https://picsum.photos/id/1003/100/100"></a>
+            <div class="sidebar-item">
+              <p>Archive</p>
+              <ul>
+                <li><a href="#">旅行日記</a></li>
+                <li><a href="#">料理レシピ</a></li>
+                <li><a href="#">ファッション</a></li>
+                <li><a href="#">ライフハック</a></li>
+                <li><a href="#">ブックレビュー</a></li>
+                <li><a href="#">健康とフィットネス</a></li>
+                <li><a href="#">ペットの世話</a></li>
+              </ul>
             </div>
-            <div class="content-hobby-list-wrapper">
-              <div class="content-hobby-list">
-                <img src="images/main.jpg" alt="高千穂牧場">
-                <div class="content-hobby-list-text">
-                  <!-- <p>aaaaaaaaaaaaaああ　ああああああああああああaaaaaaa　aaaaaaああああああああああああああ</p> -->
-                  <p>ソフトクリームまた食べたいソフトクリームまた食べたい</p>
-                </div>
-              </div>
-              <div class="content-hobby-list">
-                <img src="images/main.jpg" alt="高千穂牧場">
-                <div class="content-hobby-list-text">
-                  <!-- <p>aaaaaaaaaaaaaああ　ああああああああああああaaaaaaa　aaaaaaああああああああああああああ</p> -->
-                  <p>ソフトクリームまた食べたいソフトクリームまた食べたい</p>
-                </div>
-              </div>
-              <div class="content-hobby-list">
-                <img src="images/main.jpg" alt="高千穂牧場">
-                <div class="content-hobby-list-text">
-                  <!-- <p>aaaaaaaaaaaaaああ　ああああああああああああaaaaaaa　aaaaaaああああああああああああああ</p> -->
-                  <p>ソフトクリームまた食べたいソフトクリームまた食べたい</p>
-                </div>
-              </div>
-              <div class="content-hobby-list">
-                <img src="images/main.jpg" alt="高千穂牧場">
-                <div class="content-hobby-list-text">
-                  <!-- <p>aaaaaaaaaaaaaああ　ああああああああああああaaaaaaa　aaaaaaああああああああああああああ</p> -->
-                  <p>ソフトクリームまた食べたいソフトクリームまた食べたい</p>
-                </div>
-              </div>
-            </div>
-          </section>
+          </aside>
         </div>
-        <aside>
-          <div class="sidebar-item">
-            <p>Index</p>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </div>
-          <div class="sidebar-item">
-            <p>Category</p>
-            <ul>
-              <li><a href="#">旅行日記</a></li>
-              <li><a href="#">料理レシピ</a></li>
-              <li><a href="#">ファッション</a></li>
-              <li><a href="#">ライフハック</a></li>
-              <li><a href="#">ブックレビュー</a></li>
-              <li><a href="#">健康とフィットネス</a></li>
-              <li><a href="#">ペットの世話</a></li>
-              <li><a href="#">芸術とクラフト</a></li>
-              <li><a href="#">ビジネスとキャリア</a></li>
-              <li><a href="#">テクノロジー</a></li>
-            </ul>
-          </div>
-          <div class="sidebar-item">
-            <p>Archive</p>
-            <ul>
-              <li><a href="#">旅行日記</a></li>
-              <li><a href="#">料理レシピ</a></li>
-              <li><a href="#">ファッション</a></li>
-              <li><a href="#">ライフハック</a></li>
-              <li><a href="#">ブックレビュー</a></li>
-              <li><a href="#">健康とフィットネス</a></li>
-              <li><a href="#">ペットの世話</a></li>
-            </ul>
-          </div>
-        </aside>
-      </div>
-    </main>
-    <footer>
-      <div class="social-icons">
-        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="#" target="_blank"><i class="fab fa-threads"></i></a>
-        <a href="#" target="_blank"><i class="fab fa-x-twitter"></i></a>
-        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-      </div>
-    </footer>
-  </div>
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <!-- Slick JavaScript -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <!-- ギャラリー -->
-  <script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js"></script>
+      </main>
+      <footer>
+        <div class="social-icons">
+          <a
+            href="https://www.facebook.com/profile.php?id=100074952290413"
+            target="_blank"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-threads"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+      </footer>
+    </div>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick JavaScript -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <!-- ギャラリー -->
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js"></script>
 
-  <script src="main.js"></script>
-</body>
-
+    <script src="main.js"></script>
+  </body>
 </html>
